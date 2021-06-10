@@ -1,2 +1,2 @@
-# PerchGenomicsProject
+# PerchGenomics
 lá lá lá
