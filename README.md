@@ -12,4 +12,4 @@
 
 ![](https://github.com/layka-pacheco/PerchGenomics/blob/main/PG--Pipeline/PG--GitHubAuxiliaryFiles/PG--PhotoWiki.jpeg)
 
-###### Photo by [Mikkel SKOVRIND](mikkel.skovrind@sund.ku.dk).
+###### Photo by [Mikkel Skovrind](mikkel.skovrind@sund.ku.dk).
