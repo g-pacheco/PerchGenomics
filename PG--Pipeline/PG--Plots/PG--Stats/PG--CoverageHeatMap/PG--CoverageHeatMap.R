@@ -37,7 +37,7 @@ NR <- nrow(KMs)
 # Defines QC ~ 
 QC <- data.frame(matrix(ncol = 1, nrow = 194, dimnames = list(NULL, c("SampleStatus"))))
 rownames(QC) <- colnames(KMs)
-QC$SampleStatus <- ifelse(rownames(QC) %in% c("PGP_1???Blank", "PGP_2???Blank", "NAK-B_09", "POL???BF_15"), "BadSample", "GoodSample")
+QC$SampleStatus <- ifelse(rownames(QC) %in% c("PGP_1-Blank", "PGP_2-Blank", "NAK-B_09", "POL???BF_15"), "BadSample", "GoodSample")
                           
 
 # Defines QC colours ~
