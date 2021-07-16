@@ -1,6 +1,6 @@
 ### The BEGINNING ~~~~
 ##
-# ~ Plots FPGP--PopGenEstimates | By Marie-Christine RUFENER & George PACHECO
+# ~ Plots PG--PopGenEstimates | Initial code by Marie-Christine RUFENER & George PACHECO.
 
 
 # Cleans the environment ~ 
