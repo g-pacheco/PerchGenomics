@@ -24,8 +24,8 @@ source("utilities.R")
 
 
 # Loads the data ~
-PopGen <- read.table("AfterChrGenome_PGP--GoodSamples_DoSaf-WithWrapper-DoThetas-NoWrapper_ForGenPop.PopGenSummary.txt", sep = "\t", header = FALSE); head(PopGen)
-Hets <- read.table("AfterChrGenome_PGP--GoodSamples_RefGen_OutGroup_Sites--Article--Ultra.Heterozygosity.txt", sep = "\t", header = FALSE); head(Hets)
+PopGen <- read.table("PG--GoodSamples_DoSaf-WithWrapper-DoThetas-NoWrapper_ForGenPop.PopGenSummary.txt", sep = "\t", header = FALSE); head(PopGen)
+Hets <- read.table("PG--GoodSamples_SITES.Heterozygosity.txt", sep = "\t", header = FALSE); head(Hets)
 
 
 # Adds column names ~
@@ -73,9 +73,9 @@ ylabel <- c("Nucleotide_Diversity" = "Nucelotide Diversity",
 
 
 # Reorders populations ~
-fulldf$Population <- factor(fulldf$Population, ordered = T,
+levels(fulldf$Population <- factor(fulldf$Population, ordered = T,
                             levels = c("TAN-F", "RAN-B", "FAR-F", "SJA-F" ,"SON-F", "TYB-F",
-                                       "POL-BF", "ROS-B", "KET-B", "NAK-B", "KAR-B", "ISH-B"))
+                                       "POL-BF", "ROS-B", "KET-B", "NAK-B", "KAR-B", "ISH-B", "SouthEast-B")))
 
 
 # Creates the panel ~
