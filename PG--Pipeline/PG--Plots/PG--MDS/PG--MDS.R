@@ -1,6 +1,6 @@
 ### The BEGINNING ~~~~~
 ##
-# ~ Plots PG--MDS | First written by Filipe G. VIEIRA with later modifications by George PACHECO.
+# ~ Plots PG--MDS | First written by Filipe G. VIEIRA with later modifications by George PACHECO. Test.
 
 
 # Cleans the environment ~ 
