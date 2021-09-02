@@ -35,9 +35,9 @@ GlobalCoverage <-
                      expand = c(0,0),
                      limits = c(0, 71000)) +
   scale_y_continuous("Density",
-                     breaks = c(0.00001, 0.00002, 0.00003, 0.00004), 
+                     breaks = c(0.000025, 0.00005, 0.000075, 0.0001, 0.000125), 
                      expand = c(0,0),
-                     labels = c("1e-05", "2e-05", "3e-05", "4e-05"), 
+                     labels = c("2.5e-05", "5e-05", "7.5e-05", "1e-04", "1.25e-04"), 
                      limits = c(0, 0.000145)) +
   theme(panel.background = element_rect(fill = '#ffffff'),
         panel.grid = element_blank(),
@@ -51,7 +51,7 @@ GlobalCoverage <-
 
   
 # Saves plot ~
-ggsave(GlobalCoverage, file = "PG--GlobalCoverage.pdf", width = 12, height = 8, device = cairo_pdf, dpi = 600)
+ggsave(GlobalCoverage, file = "PG--GlobalDepth.pdf", width = 12, height = 8, device = cairo_pdf, dpi = 600)
 
 
 #
