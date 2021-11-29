@@ -24,7 +24,7 @@ source("utilities.R")
 
 
 # Loads the data ~
-PopGen <- read.table("PG--GoodSamples_DoSaf-WithWrapper-DoThetas-NoWrapper_ForGenPop.PopGenSummary.txt", sep = "\t", header = FALSE); head(PopGen)
+PopGen <- read.table("PG--GoodSamples_DoSaf-WithWrapper-DoThetas-NoWrapper.PopGenSummary.txt", sep = "\t", header = FALSE); head(PopGen)
 Hets <- read.table("PG--GoodSamples_SITES.Heterozygosity.txt", sep = "\t", header = FALSE); head(Hets)
 
 
@@ -38,7 +38,7 @@ UnwantedPops <- c("Pflavescens", "Pfluviatilis")
 Hets <- filter(Hets, !Population %in% UnwantedPops)
 
 
-# Converts DF from wide into long (necessary for ggplot) ~
+# Converts DF from wide into long ~
 PopGenUp <- gather(PopGen, Estimate, Value, "Nucleotide_Diversity", "Watson_Theta", "Tajima_D")
 
 
@@ -75,19 +75,20 @@ ylabel <- c("Nucleotide_Diversity" = "Nucelotide Diversity",
 # Reorders populations ~
 levels(fulldf$Population <- factor(fulldf$Population, ordered = T,
                             levels = c("TAN-F", "RAN-B", "FAR-F", "SJA-F" ,"SON-F", "TYB-F",
-                                       "POL-BF", "ROS-B", "KET-B", "NAK-B", "KAR-B", "ISH-B", "SouthEast-B")))
+                                       "POL-BF", "ROS-B", "KET-B", "NAK-B", "KAR-B", "ISH-B")))
+
 
 
 # Creates the panel ~
 PopGennEstimates <- 
  ggplot() +
   geom_boxplot(data = subset(fulldf, ID == "Hets"),
-               aes(x = Population, y = Het, fill = Population), show.legend = FALSE, outlier.colour = "black", outlier.shape = 21, outlier.size = 1.85, width = .3, lwd = .3) +
+               aes(x = Population, y = Het, fill = Population), show.legend = FALSE, outlier.colour = "#000000", outlier.shape = 21, outlier.size = 1.85, width = .3, lwd = .3) +
   geom_point(data = subset(fulldf, Estimate == "Nucleotide_Diversity"),
-             aes(x = Population, y = Value, fill = Population), colour = "black", shape = 21, size = 3.5, alpha = .9) +
+             aes(x = Population, y = Value, fill = Population), colour = "#000000", shape = 21, size = 3.5, alpha = .9) +
   facet_grid(Estimate ~. , scales = "free", labeller = labeller(Estimate = ylabel)) +
-  #scale_fill_manual(values = c("#44AA99", "#F0E442", "#E69F00", "#56B4E9")) +
-  #scale_colour_manual(values = c("#44AA99", "#F0E442", "#E69F00", "#56B4E9")) +
+  scale_fill_manual(values = c("#aa8800ff", "#d4aa00ff", "#ff9200ff", "#aa0000ff", "#ff2a2aff", "#ffaaaaff", "#447821ff", "55d400ff",
+                               "#2ad4ffff", "#0044aaff", "#8080ffff", "#2a2affff")) +
   theme(panel.background = element_rect(fill = "#ffffff"),
         panel.grid.major.x = element_line(color = "#ededed", linetype = "dashed", size = .00005),
         panel.grid.major.y = element_blank(),
