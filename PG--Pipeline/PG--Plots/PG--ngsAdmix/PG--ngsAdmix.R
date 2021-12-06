@@ -1,6 +1,6 @@
 ### The BEGINNING ~~~~~
 ##
-# ~ Plots FPGP--ngsAdmix | First written by Jose SAMANIEGO and modified by George PACHECO.
+# ~ Plots PG--ngsAdmix | First written by Jose Samaniego and later modified by George Pacheco.
 
 
 # Cleans the environment ~ 
@@ -25,11 +25,11 @@ loadfonts(device = "win", quiet = TRUE)
 
 
 # Loads the data ~
-samples <- read.table("PG--GoodSamples_NoOutgroup_SNPs.popfile", stringsAsFactors = FALSE, sep = "\t")
+samples <- read.table("PG--GoodSamples_NoOutgroup_NoREF_SNPs.popfile", stringsAsFactors = FALSE, sep = "\t")
 
 
 # Reads the annotation file ~
-ids <- read.table("PG--GoodSamples_NoOutgroup_SNPs.annot", stringsAsFactors = FALSE, sep = "\t", header = FALSE)
+ids <- read.table("PG--GoodSamples_NoOutgroup_NoREF.annot", stringsAsFactors = FALSE, sep = "\t", header = FALSE)
 
 
 # Adds column ids names ~
@@ -45,17 +45,17 @@ fulldf <- data.frame()
 
 
 # Ask Sama 2 ~
-x <- list(c(8, 1, 6, 10, 5, 9, 4, 3, 2, 7, 12, 11),
-          c(5, 3, 7, 1, 9, 10, 4, 2, 6, 8, 11),
-          c(9, 10, 2, 3, 1, 6, 8, 4, 7, 5),
-          c(8, 4, 1, 5, 2, 9, 7, 3, 6),
-          c(7, 4, 2, 3, 8, 1, 6, 5),
-          c(5, 3, 4, 7, 6, 2, 1),
-          c(1, 4, 6, 2, 5, 3),
-          c(1, 2, 3, 4, 5),
-          c(2, 1, 3, 4),
-          c(3, 2, 1),
-          c(2,1))
+x <- list(c(10, 12, 6, 11, 1, 7, 2, 8, 3, 4, 5, 9),
+          c(1, 6, 2, 3, 10, 7, 11, 9, 8, 4, 5),
+          c(2, 3, 7, 5, 4, 10, 1, 6, 9, 8),
+          c(6, 9, 1, 4, 2, 7, 3, 8, 5),
+          c(6, 7, 1, 4, 3, 2, 5, 8),
+          c(3, 4, 2, 1, 6, 5, 7),
+          c(1, 3, 4, 5, 6, 2),
+          c(5, 4, 2, 3, 1),
+          c(3, 2, 4, 1),
+          c(1, 2, 3),
+          c(2, 1))
 
 
 # Defines samples' IDs ~
@@ -76,7 +76,7 @@ for (j in 1:length(samples[,1])){
 
 # Reorganises the data ~
 fulldf$Population_Alt <- factor(fulldf$Population_Alt, ordered = T, levels = c("TAN-F", "RAN-B", "FAR-F", "SJA-F", "SON-F", "TYB-F", "POL-BF", "ROS-B", "KET-B",
-                                                                               "NAK-B", "KAR-B", "ISH-B", "Pfluviatilis"))
+                                                                               "NAK-B", "KAR-B", "ISH-B"))
 
 
 # Defines the target to be plotted ~
@@ -90,7 +90,7 @@ ngsAdmix <-
    facet_grid(K_Value ~ get(target), space = "free_x", scales = "free_x") +
    scale_x_discrete(expand = c(0, 0)) + 
    scale_y_continuous(expand = c(0, 0), breaks = NULL) +
-   #scale_fill_manual(values = MyColours) +
+   scale_fill_manual(values = MyColours) +
      theme(panel.background = element_rect(fill = "#ffffff"),
       panel.grid.minor.x = element_blank(),
       panel.grid.major = element_blank(),
@@ -102,19 +102,19 @@ ngsAdmix <-
       axis.text.y = element_blank(),
       axis.ticks = element_blank(),
       strip.background = element_rect(colour = "#000000", fill = '#FAFAFA', size = 0.05),
-      strip.text.x = element_text(colour = "#000000", face = "bold", size = 10, angle = 90, margin = margin(.1, 0, .1, 0, "cm")),
+      strip.text.x = element_text(colour = "#000000", face = "bold", size = 11, margin = margin(.25, 0, .25, 0, "cm")),
       strip.text.y = element_text(colour = "#000000", face = "bold", size = 10, angle = 90, margin = margin(0, .1, 0, .1, "cm")),
       legend.position = "none")
 
 
 # Saves the final plot ~
-ggsave(ngsAdmix, file = "PG--ngsAdmix_RColours.pdf", device = cairo_pdf, width = 40, height = 15, scale = .75, dpi = 600)
+ggsave(ngsAdmix, file = "PG--ngsAdmix_PairedColours.pdf",
+       device = cairo_pdf, width = 40, height = 15, scale = .75, dpi = 600)
 
 
 #
 ##
 ### The END ~~~~~
-
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

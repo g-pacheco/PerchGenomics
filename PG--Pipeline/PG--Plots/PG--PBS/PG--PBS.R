@@ -20,7 +20,7 @@ loadfonts(device = "win", quiet = TRUE)
 
 
 # Loads datasets ~
-PBS <- read.table("PG--GoodSamples_NoRef_NoOutGroup_Groups--PBS_1M-10K.tsv", stringsAsFactors = FALSE, sep = "\t", header = FALSE)
+PBS <- read.table("PG--GoodSamples_NoRef_NoOutGroup_Groups--PBS_50K-25K.tsv", stringsAsFactors = FALSE, sep = "\t", header = FALSE)
 colnames(PBS) <- c("CHR", "SNP", "gPoint", "Window", "NumberOfSites", "Group_A", "Group_B", "Group_C")
 
 
@@ -58,7 +58,7 @@ PBS_Window <-
   scale_y_continuous("Population Branch Statistics (Group C)",
                      breaks = c(.25, .5, .75, 1),
                      labels = c("0.25", "0.5", "0.75", "1"),
-                     limits = c(0, .85),
+                     limits = c(0, 1.01),
                      expand = c(0, 0)) +
   theme(plot.title = element_blank(),
         panel.border = element_blank(),
@@ -83,7 +83,7 @@ PBS_WindowUp <-
 
 
 # Saves Manhattan plot ~
-ggsave(PBS_WindowUp, file = "PG--GoodSamples_NoRef_NoOutGroup_Groups--PBS_1M_10K_99quant.pdf",
+ggsave(PBS_WindowUp, file = "PG--GoodSamples_NoRef_NoOutGroup_Groups--PBS_50K-25K_quant99.pdf",
        device = cairo_pdf, scale = .5, width = 32, height = 16, dpi = 600)
 
 
