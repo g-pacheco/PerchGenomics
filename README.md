@@ -10,6 +10,6 @@
 
 #### Male and female individuals of _Kryptolebias_.
 
-![](https://github.com/pacheco-george/PerchGenomics/blob/main/PG--Pipeline/PG--GitHubAuxiliaryFiles/PG--PhotoWiki.jpeg)
+![](https://github.com/pacheco-george/PerchGenomics/blob/main/PG--Pipeline/PG--GitHubAuxiliaryFiles/PG--RepositoryImage.jpg)
 
 ###### Photo by [Mikkel Skovrind](mikkel.skovrind@sund.ku.dk).
