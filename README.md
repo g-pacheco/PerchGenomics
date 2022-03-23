@@ -1,15 +1,13 @@
 # _Perch Genomics_
 
-### Code repository for analyses conducted in Skovrind et al. (2021).
+### Code repository for analyses conducted in Skovrind et al. (2022).
 
-- Please visit the [Wiki page](https://github.com/pacheco-george/PerchGenomics/wiki) for detailed information on the individual analyses.
-- The [LaTeX](https://en.wikipedia.org/wiki/LaTeX) codes used to generate the preprint version of this manuscript is available in [`PG--Article`](https://github.com/pacheco-george/PerchGenomics/tree/main/PG--Article).
-- The Rscript used to create the map presented as Figure 1 is available in [`PG--Map`](https://github.com/pacheco-george/PerchGenomics/tree/main/PG--Pipeline/PG--Plots/PG--Map).
+- Please visit the [Wiki page](https://github.com/g-pacheco/PerchGenomics/wiki) for detailed information on the individual analyses.
 ***
 ***
 
-#### Male and female individuals of _Kryptolebias_.
+#### Specimen of _Perca fluviatilis_.
 
 ![](https://github.com/g-pacheco/PerchGenomics/blob/main/PG--Pipeline/PG--GitHubAuxiliaryFiles/PG--RepositoryImage.jpg)
 
-###### Photo by [Mikkel Skovrind](mikkel.skovrind@sund.ku.dk).
+###### Photo by [Henrik Carl](https://forskning.ku.dk/soeg/result/?pure=da%2Fpersons%2F170142).
