@@ -1,6 +1,6 @@
 # _Perch Genomics_
 
-### Code repository for analyses conducted in Skovrind et al. (2022).
+### Code repository for analyses conducted in Skovrind et al. (2023).
 
 - Please visit the [Wiki page](https://github.com/g-pacheco/PerchGenomics/wiki) for detailed information on the individual analyses.
 ***
